@@ -1,4 +1,10 @@
 h2 Features
 ul
-	- for(feature in features)
-		li= features[feature]
+	- for(i in features.specs)
+		li= features.specs[i]
+ul
+	- for(i in features.features)
+		li= features.features[i].name
+		ul
+			- for(j in features.features[i].specs)
+				li= features.features[i].specs[j]
