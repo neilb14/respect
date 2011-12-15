@@ -1,12 +1,22 @@
-var express = require('express');
-var feature = express.createServer();
-feature.get('/respect/feature', function(req,res) {
-	res.send('Du bist schweinehunde!!');
+var express = require('express'),
+		fs = require('fs');
+var app = express.createServer();
+app.get('/respect/features', function(req,res) {
+	fs.readdir('../features', function (err, filenames) {
+		if(err != null) {
+			res.send("<html><body><p>Error: " + err + "</p></body></html>");
+		}
+		if(filenames == null || filenames.length <= 0) {
+				res.send("<html><body><p>No features defined.</p></body></html>");
+				return;
+		}
+    var i;
+		var output = "<html><body><ul>"
+    for (i = 0; i < filenames.length; i++) {
+				output += "<li>" + filenames[i] + "</li>";
+    }
+		output += "</ul></body></html>";
+		res.send(output);
+	});
 });
-feature.get('/respect/feature/foo', function(req,res) {
-	res.send('Mahlzeit von foo');
-});
-feature.get('/respect/feature/bar', function(req,res) {
-	res.send('Mahlzeit von bar');
-});
-feature.listen(process.env.PORT);
+app.listen(process.env.PORT);
