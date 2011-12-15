@@ -1,2 +1,14 @@
 h1= feature
 h2= spec
+a(id="run", href="javascript:void(0)") Run
+.result
+form(action=runUrl, method="POST")
+	input(type="hidden", value=runUrl)
+
+script
+	$("a#run").click(function(){
+		$(".result").html("<p>Running...</p>");
+		$.post($("form").attr('action'), function(data){
+			$(".result").html(data);	
+		});
+	});
