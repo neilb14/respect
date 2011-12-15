@@ -1,20 +1,23 @@
 var express = require('express'),
-		fs = require('fs');
-var app = express.createServer(
-	express.logger(),
-	express.bodyParser()
-);
+		fs = require('fs'),
+		home = process.argv.pop();
+
+var app = express.createServer(express.logger());
+app.set('views','www/views');
+
+console.log('Respecting ' + home);
+eval(fs.readFileSync(home + '/respect.config', encoding="ascii"));
 
 app.get('/respect/features', function(req,res) {
-	fs.readdir('../features', function (err, filenames) {
+	fs.readdir(home + '/features', function (err, filenames) {
 		if(err != null) {
-			res.send("<html><body><p>Error: " + err + "</p></body></html>");
+			res.send("<html><body><p>" + err + "</p></body></html>");
 		}
 		if(filenames == null || filenames.length <= 0) {
 				res.send("<html><body><p>No features defined.</p></body></html>");
 				return;
 		}
-		res.render('features.jade', {features:filenames});
+		res.render('features.jade', {title:settings.title, features:filenames});
 	});
 });
 
@@ -22,6 +25,6 @@ app.get('/respect/stuff/:name', function(req,res) {
 	res.send(req.params.name);
 });
 
-var port = process.env.PORT || 80;
+var port = settings.port || process.env.PORT || 8069;
 console.log('Respect server listening on ' + port);
 app.listen(port);
