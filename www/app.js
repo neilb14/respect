@@ -1,6 +1,10 @@
 var express = require('express'),
 		fs = require('fs');
-var app = express.createServer();
+var app = express.createServer(
+	express.logger(),
+	express.bodyParser()
+);
+
 app.get('/respect/features', function(req,res) {
 	fs.readdir('../features', function (err, filenames) {
 		if(err != null) {
@@ -10,15 +14,14 @@ app.get('/respect/features', function(req,res) {
 				res.send("<html><body><p>No features defined.</p></body></html>");
 				return;
 		}
-    var i;
-		var output = "<html><body><ul>"
-    for (i = 0; i < filenames.length; i++) {
-				output += "<li>" + filenames[i] + "</li>";
-    }
-		output += "</ul></body></html>";
-		res.send(output);
+		res.render('features.jade', {features:filenames});
 	});
 });
+
+app.get('/respect/stuff/:name', function(req,res) {
+	res.send(req.params.name);
+});
+
 var port = process.env.PORT || 80;
 console.log('Respect server listening on ' + port);
 app.listen(port);
