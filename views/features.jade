@@ -1,10 +1,12 @@
 h2 Features
 ul
 	- for(i in features.specs)
-		li= features.specs[i]
+		li
+			a(href=features.specs[i].runUrl)= features.specs[i].name
 ul
 	- for(i in features.features)
 		li= features.features[i].name
 		ul
 			- for(j in features.features[i].specs)
-				li= features.features[i].specs[j]
+				li
+					a(href=features.features[i].specs[j].runUrl)= features.features[i].specs[j].name
