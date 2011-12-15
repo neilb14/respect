@@ -19,4 +19,6 @@ app.get('/respect/features', function(req,res) {
 		res.send(output);
 	});
 });
-app.listen(process.env.PORT);
+var port = process.env.PORT || 80;
+console.log('Respect server listening on ' + port);
+app.listen(port);
