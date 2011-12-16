@@ -4,5 +4,6 @@ test = {
 	method: "GET",
 	verify: function(result){
 		console.log('Verifying the list of features...');
+		return 'Success!';
 	}
 };

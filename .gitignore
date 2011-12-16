@@ -1,4 +1,5 @@
 *.swp
+*.swo
 *~
 *.js.logs
 *.js.debug
