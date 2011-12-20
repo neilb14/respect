@@ -1,8 +1,9 @@
 # Installation
 ## Prerequisites
 - node.js
-- express npm
-- jade npm
+- express (npm)
+- jade (npm)
+- jasmine-node (npm)
 
 ## Instructions
 Sorry, no instructions yet.  I'm hoping to publish this as an npm module but I'm still learning.
