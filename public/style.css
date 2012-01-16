@@ -1,3 +1,4 @@
 body { color: #333; }
 li.feature { background-color: #003300;}
+li.feature a { color: #fff;}
 img { width: 50px; float: left; margin-right: 10px; }
