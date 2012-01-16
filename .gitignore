@@ -4,3 +4,4 @@
 *.js.logs
 *.js.debug
 node_modules/
+*.log
