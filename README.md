@@ -13,7 +13,11 @@ Sorry, no instructions yet.  I'm hoping to publish this as an npm module but I'm
 
 You can run this by specifying a directory containing a respect.config file on the command line.  The project is setup for dogfooding so you can run Respect against itself by using:
 
->	respect 
+>	respect .
+
+Or in Windows
+
+> bin/respect .
 
 Alternatively you can run Respect against any arbitrary project by specifying the path to the project as an argument.  The path you specify represents the directory holding your respect.config and feature sub directories.
 
