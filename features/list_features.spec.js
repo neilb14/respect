@@ -10,7 +10,7 @@ describe('list features', function() {
 	it('should allow a user to view a specific feature', function() {
 		get("/respect/list_features.js", function(res, body) {
 			expect(body.features[0].name).toEqual("list_features");
-			expect(body.features[0].showUrl).toEqual("/respect/show_feature/list_feature");
+			expect(body.features[0].showUrl).toEqual("/respect/show_feature/list_features");
 		});
 	});
 });
