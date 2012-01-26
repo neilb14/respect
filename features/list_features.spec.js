@@ -3,7 +3,7 @@ describe('list features', function() {
         get("/respect/list_features.js", function(res, body){
           expect(res.statusCode).toEqual(200);
 					expect(body.title).toEqual("Dogfooding Respect");
-					expect(body.features.length).toEqual(2); // change this to be greater than :-)
+					expect(body.features.length).toEqual(3); // change this to be greater than :-)
     	});
 	});
 	
