@@ -6,7 +6,11 @@
 - jasmine-node (npm)
 
 ## Instructions
-Sorry, no instructions yet.  I'm hoping to publish this as an npm module but I'm still learning.
+Clone repositary from github and run npm install
+
+	git clone git://github.com/neilb14/respect.git
+	cd respect
+	npm install
 
 # Usage
 ## Show some Respect
