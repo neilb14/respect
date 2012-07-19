@@ -1,0 +1,45 @@
+{
+  "name": "respect",
+  "version": "0.0.1",
+  "description": "A functional testing framework for RESTful web services",
+  "homepage": [
+    "https://github.com/neilb14/respect"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/neilb14/respect.git"
+  },
+  "keywords": [
+    "testing",
+    "REST"
+  ],
+  "author": {
+    "name": "Neil Bourgeois",
+    "email": "neil.bourgeois@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "nickl-",
+      "email": "github@jigsoft.co.za"
+    }
+  ],
+  "maintainers": "Neil Bourgeois <neil.bourgeois@gmail.com>",
+  "licenses": [
+    ""
+  ],
+  "dependencies": {
+    "jade": ">=0.0.1",
+    "jasmine-node": ">=0.0.1",
+    "express": ">=0.0.1"
+  },
+  "bin": {
+    "respect": "bin/respect"
+  },
+  "main": "lib/app",
+  "_id": "respect@0.0.1",
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
